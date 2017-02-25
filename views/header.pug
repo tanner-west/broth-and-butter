@@ -1,0 +1,32 @@
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js', integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=', crossorigin='anonymous')
+    
+    - var navItems= [{"name":"food","content":"FOOD!"},{"name":"tools", "content":"TOOLS!"},{"name":"clothes","content":"CLOTHES!"},{"name":"books","content":"FOOD!"},{"name":"pots","content":"FOOD!"}]
+    mixin nav-list(name, content)
+      li= name
+       .product
+         h2= content
+
+  link(href='css/style.css' rel='stylesheet')
+
+  body
+    header
+      #title-div
+        #sale
+          // <span style="color: red; font-weight:bold">Log In</span>
+          span(style='text-align: center') Log In
+        #social
+          img(src='Facebook.png')
+          img(src='Pinterest.png')
+          img(src='Instagram.png')
+        h1 BROTH & BUTTER
+        img#burger(src='burger.svg')
+      #nav.slid
+        h3#left-element PRODUCT
+        ul
+          each item in navItems
+            +nav-list(item.name, item.content)
+                       
+        h3#right-element SEARCH
