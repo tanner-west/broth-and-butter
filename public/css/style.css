@@ -7,16 +7,42 @@ body {
     font-family: "Quattrocento Sans", sans-serif; }
 
 body * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+   }
 
 .product {
-  width: 100%;
+  max-width: 100vw;
+  background-color: white;
+  width: 100vw;
   height: 50vh;
-  background-color: black;
-  position: fixed;
-  top: 142;
+  position: absolute;
   left: 0;
-  display: none; }
+  transform: translate(-25%, 18px);
+  display: none;
+   }
+.feature {
+  width: 33.333%;
+  height: 100%;
+  float: left;
+  padding: 5px;
+}  
+
+.sub-cat {
+  width: 22.222%;
+  height: 50%;
+  float: left;
+  padding: 5px;
+}
+
+
+.sub-cat > p {
+  color: black;
+}
+
+.sub-cat > img, .feature > img {
+  max-height: 100%;
+  max-width: 100%;
+}
 
 #burger {
   visibility: hidden; }
@@ -24,7 +50,7 @@ body * {
 #title-div {
   width: 100%;
   height: 81px;
-  position: fixed;
+  position: absolute;
   top: 0px;
   background-color: white;
   padding: 0; }
@@ -45,7 +71,7 @@ body * {
   max-height: 75px;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
-  position: fixed;
+  position: absolute;
   top: 81px;
   background-color: white;
   padding: 0; }
@@ -67,8 +93,7 @@ body * {
   #nav li:hover .product {
     display: block; }
   #nav li:hover {
-    background-color: black;
-    color: white; }
+    color: black; }
   #nav h3 {
     display: inline-block;
     position: absolute;
@@ -78,8 +103,6 @@ body * {
     padding: 20px;
     font-size: 18px; }
 
-#title-div:hover h1 {
-  color: green; }
 
 #right-element {
   right: 0;
@@ -95,10 +118,11 @@ body * {
   margin: auto;
   height: 100vh;
   background: url("../images/pancakes.jpg");
-  background-size: cover; }
+  background-size: cover; 
+}
 
 #social {
-  position: fixed;
+  position: absolute;
   right: 80px;
   top: 15px;
   width: 150px; }
@@ -108,7 +132,7 @@ body * {
     float: right; }
 
 #sale {
-  position: fixed;
+  position: absolute;
   left: 80px;
   top: 30px;
   border: 3px solid black; }
@@ -149,7 +173,7 @@ body * {
     #nav li {
       border-bottom: 1px solid black;
       display: block;
-      width: 80%;
+      width: 100%;
       margin: auto;
       text-align: center;
       padding: 20px 0;
@@ -164,6 +188,8 @@ body * {
       margin: 0 20px;
       padding: 20px;
       font-size: 18px; }
+    #nav li:hover .product {
+    display: none; }
   .slid {
     left: -800 !important; }
   #burger {
@@ -178,15 +204,17 @@ body * {
   #left-element {
     display: none; }
   #lipsum {
-    width: 66%;
-    margin: auto;
-    margin-top: 81px; }
-  #cover {
     width: 80%;
     margin: auto;
-    height: 100vh;
+  }
+  #cover {
+    width: 100%;
+    margin: auto;
+    height: 50vh;
     background: url("../images/pancakes.jpg");
-    background-position: bottom right; }
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
   #social {
     display: none;
     position: fixed;

@@ -3,11 +3,30 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     script(src='https://code.jquery.com/jquery-3.1.1.min.js', integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=', crossorigin='anonymous')
     
-    - var navItems= [{"name":"food","content":"FOOD!"},{"name":"tools", "content":"TOOLS!"},{"name":"clothes","content":"CLOTHES!"},{"name":"books","content":"FOOD!"},{"name":"pots","content":"FOOD!"}]
-    mixin nav-list(name, content)
-      li= name
+    - var navItems= [ {"name": "food", "content": "FOOD!", "cat_1_content": "images/img-1-green.png", "cat_2_content": "images/img-2-green.png", "cat_3_content": "images/img-3-green.png", "cat_4_content": "images/img-4-green.png", "cat_5_content": "images/img-5-green.png", "cat_6_content": "images/img-6-green.png", "cat_feature_img": "images/img-feature-gray.png"}, {"name": "tools", "content": "TOOLS!", "cat_1_content": "images/img-1-pink.png", "cat_2_content": "images/img-2-pink.png", "cat_3_content": "images/img-3-pink.png", "cat_4_content": "images/img-4-pink.png", "cat_5_content": "images/img-5-pink.png", "cat_6_content": "images/img-6-pink.png", "cat_feature_img": "images/img-feature-gray.png"}, {"name": "clothes", "content": "CLOTHES!", "cat_1_content": "images/img-1-gray.png", "cat_2_content": "images/img-2-gray.png", "cat_3_content": "images/img-3-gray.png", "cat_4_content": "images/img-4-gray.png", "cat_5_content": "images/img-5-gray.png", "cat_6_content": "images/img-6-gray.png", "cat_feature_img": "images/img-feature-gray.png"}, {"name": "books", "content": "FOOD!", "cat_1_content": "images/img-1-blue.png", "cat_2_content": "images/img-2-blue.png", "cat_3_content": "images/img-3-blue.png", "cat_4_content": "images/img-4-blue.png", "cat_5_content": "images/img-5-blue.png", "cat_6_content": "images/img-6-blue.png", "cat_feature_img": "images/img-feature-gray.png"}, {"name": "pots", "content": "POTS!", "cat_1_content": "images/img-1-peach.png", "cat_2_content": "images/img-2-peach.png", "cat_3_content": "images/img-3-peach.png", "cat_4_content": "images/img-4-peach.png", "cat_5_content": "images/img-5-peach.png", "cat_6_content": "images/img-6-peach.png", "cat_feature_img": "images/img-feature-gray.png"} ]
+  mixin nav_list(name, content, cat_1_content, cat_2_content, cat_3_content, cat_4_content, cat_feature_img) 
+    li= name
        .product
-         h2= content
+        .feature
+          img(src= cat_feature_img)
+        .sub-cat
+          img(src= cat_1_content)
+        .sub-cat
+          img(src= cat_2_content)
+
+        .sub-cat
+          img(src= cat_3_content)
+
+        .sub-cat
+          img(src= cat_4_content)
+
+        .sub-cat
+          img(src= cat_5_content)
+
+        .sub-cat
+          img(src= cat_6_content)
+
+
 
   link(href='css/style.css' rel='stylesheet')
 
@@ -27,6 +46,6 @@ html
         h3#left-element PRODUCT
         ul
           each item in navItems
-            +nav-list(item.name, item.content)
+            +nav_list(item.name, item.content, item.cat_1_content, item.cat_2_content, item.cat_3_content, item.cat_4_content, item.cat_feature_img)
                        
         h3#right-element SEARCH
